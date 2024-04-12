@@ -1,27 +1,36 @@
-Algoritmo "operadora"
+Algoritmo "troco_verificado"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Dr. Nelio Alves
-// Descrição   : Uma operadora de telefonia cobra R$ 50.00 por um plano básico que dá direito a 100 minutos de
-// telefone. Cada minuto que exceder a franquia de 100 minutos custa R$ 2.00. Fazer um programa para
-// ler a quantidade de minutos que uma pessoa consumiu, daí mostrar o valor a ser pago.
+// Descrição   : Fazer um programa para calcular o troco no processo de pagamento de um produto de uma mercearia.
+// O programa deve ler o preço unitário do produto, a quantidade de unidades compradas deste produto,
+// e o valor em dinheiro dado pelo cliente. Seu programa deve mostrar o valor do troco a ser devolvido
+// ao cliente. Se o dinheiro dado pelo cliente não for suficiente, mostrar uma mensagem informando o
+// valor restante conforme exemplo.
+
 // Autor(a)    : Nome do(a) aluno(a)
 // Data atual  : 11/04/2024
 Var
    // Seção de Declarações das variáveis
 
-   minutos : inteiro
-   total : real
+   preco, valor_rec, troco : real
+   unidades : inteiro
 
 Inicio
    // Seção de Comandos, procedimento, funções, operadores, etc...
 
-   escreva("Digite a quantidade de minutos: ")
-   leia(minutos)
+   escreva("Preco unitario do produto: ")
+   leia(preco:3:2)
+   escreva("Quantidade comprada: ")
+   leia(unidades)
+   escreva("Dinheiro recebido: ")
+   leia(valor_rec)
 
-   se (minutos<=100) entao
-      escreval("Valor a pagar R$ ", 50:3:2)
+   troco <- valor_rec - (unidades*preco)
+
+
+   se troco < 0 entao
+      escreval("DINHEIRO INSUFICIENTE. FALTAM ", abs(troco):3:2," REAIS")
    senao
-      total <- (minutos - 100)*2 + 50
-      escreval("Valor a pagar R$ ",  total:3:2)
+      escreval("Troco: ", abs(troco):3:2)
    fimse
 Fimalgoritmo

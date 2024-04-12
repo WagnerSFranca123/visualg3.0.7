@@ -25,10 +25,11 @@ Inicio
    escreva("Dinheiro recebido: ")
    leia(valor_rec)
 
-   troco <- (unidades*preco) - valor_rec
+   troco <- valor_rec - (unidades*preco)
+
 
    se troco < 0 entao
-      escreval("DINHEIRO INSUFICIENTE. FALTAM ", troco:3:2," REAIS")
+      escreval("DINHEIRO INSUFICIENTE. FALTAM ", abs(troco):3:2," REAIS")
    senao
       escreval("Troco: ", troco:3:2)
    fimse
